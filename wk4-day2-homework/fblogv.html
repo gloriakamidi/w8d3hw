@@ -7,7 +7,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
-    <style>
+    <!--CSS-->
+    <link rel="stylesheet" href="styles.css">
+    <!--<style>
         * {
             font-family:Arial, Helvetica, sans-serif;
         }
@@ -78,7 +80,7 @@
             text-align: center;
             font-size: 0.85em;
         }
-    </style>
+    </style>-->
 
     
 
@@ -92,7 +94,8 @@
     <main>
     
     <aside id="photos">
-        <img src="images/chili.jpg" alt="White Chicken Chili" width="180">
+        <!--<img src="images/chili.jpg" alt="White Chicken Chili" width="180">-->
+        <img v-bind:src="mainimage">
     </aside>
     <h2>Comments</h2>
     
@@ -100,15 +103,8 @@
     <section id="blogposts">
     
     <div class="post">
-        
-         <span class="profile" >
-        <img v-bind:src="images/profile.png" v-on:click="authorinfo(posts, post)" >
-              </span>
-              
        
-           
-       
-        <span class="author"> {{post.name}}</span> — 
+        <span class="author">{{obj1.author}}</span> — 
         <span class="date">{{obj1.date}}</span>
         <span class="reply">{{text}}</span>
         <p>
@@ -153,65 +149,38 @@
     </footer>
     
 </div>
-<script>
-        var blogs = new Vue({
-            el: '#blogposts',
-            data:{ 
-                posts:[ 
-                {   profilepix: 'images/profile.png',
-                    name:"Brianna",
-                    foodielevel: "Novice",
-                    bio: " Food enthusiast. Love to cook and experiment. Into only organic, fat free, sugar free stuffs!",
+<!--<script>
+        var container = new Vue({
+            el: '#container',
+            data:{
+                obj1:{
+                    author:"Brianna",
                     date:" February 18, 2021 @ 3:30 pm",
-                    reply:" REPLY",
-                    //paragraph= message 
-                    paragraph: "Was amazing! My Walmart didn’t have coriander in stock and didn’t have ground cumin. I used serrano instead of jalapeño. It was just like my favorite tortilla soup from BJs. I am sending this recipe to my family. I want everyone to try it!",
-                    thisBox: false,
+                    paragraph:"Was amazing! My Walmart didn’t have coriander in stock and didn’t have ground cumin. I used serrano instead of jalapeño. It was just like my favorite tortilla soup from BJs. I am sending this recipe to my family. I want everyone to try it!",
                 },
-                {
-                    profilepix:"images/profile.png",
-                    name:"LINH ",
-                    foodielevel:"Newcomer",
-                    bio: "Love food! Grew up with meat and potatoes. Recently venture outside my comfort zone. Loving everything I have been eating so far. Thai is my favorite at this time.",
+                obj2: {
+                    author:"LINH ",
                     date:"February 15, 2021 @ 9:46 am ",
-                    reply:" REPLY",
                     paragraph:"I just made this soup today and it’s so tasty! didn’t have corn at home but still turned out very good.  It’s a winner!  I made beef chili for my parents; but since my dad has gout he can’t eat beef; this white chicken chili is perfect for him.  Thank you Lisa!",
-                    thisBox: false,
                 },
-                {   profilepix: "images/profile.png",
-                    name:"CATHERINE LEONARDO ",
-                    foodielevel: "Mentor ",
-                    bio: " I have to say I never was the adventurous type until 2 years ago. My boyfriend, who is of Japanese background, exposed me to other cultural food and I have never look back since! ",
+                obj3:{
+                    author:"CATHERINE LEONARDO ",
                     date:"February 13, 2021 @ 12:58 pm ",
-                    reply:" REPLY",
                     paragraph:"I LOVE this White Chicken Chili! You are right, it is satiating meal—delicious with toasted bread. Refreshingly different taste than any chicken chili I’ve made in the past. I made it exactly as written and added some chopped zucchini, carrots, and celery. Instead of shredding the chicken, I chopped it into small pieces. It freezes very well. Will be an all-time favorite, for sure. ",
-                    thisBox: false,
                 },
-                {   profilepix: "images/profile.png ",
-                    name:"KALI ",
-                    foodielevel: "Novice",
-                    bio: " Food is my passion. So is cooking. I love to experiment and try new things. I have to admit I'm a food whore! Invite me over for dinner and I'll be there!",
+                obj4:{
+                    author:"KALI ",
                     date:"February 13, 2021 @ 11:31 am ",
-                    reply:" REPLY",
                     paragraph:"This recipe is dynamite! My partner usually won’t eat beans but he finished the whole pot (darn was hoping to have some for leftovers haha). This is crowd-pleaser that I am going to add to my regular recipe rotation. Thanks so much, Lisa!",
-                    thisBox: false,
-                }
-                ],
-                styleobj : {
-                    width: "300px",
-                    height: "400px",
-                    backgroundColor: "red"
-                },  
+                },
+                text: "REPLY", //is this correct?
+
+                //convert image to vue
+                
+                mainimage: '<img src = " images/chili.jpg" width= "180" >',
+
+                
             },
-            methods: {
-                authorinfo: function(posts, post) {
-                    for (var i=0; i<posts. lenght; i++) {
-                        posts[i].thisBox = false;
-                        post.thisBox = true;
-                    }
-                }
-                }
-            }, 
             components: {
                 'foodblog':{
                     template:'<span>Food Blog</span>'
@@ -220,23 +189,12 @@
                     template: '<h2>Comments</h2>'
                 }
 
-            },
-            //img : '<img src="images/profile.png">',
-
-            /*computed: {
-            photo () {
-                return 'images/profile.png'
             }
-            } */
-           /* methods: {
-                addpicture: function() {
-
-                }
-            } */ 
             
-        
+        })
         
        
-    </script>
+    </script>-->
+    <script src="vue.js"></script>
 </body>
 </html>
