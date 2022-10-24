@@ -40,3 +40,4 @@ var container = new Vue({
     },
   },
 });
+components

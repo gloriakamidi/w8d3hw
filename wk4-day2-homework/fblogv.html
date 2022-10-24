@@ -86,6 +86,19 @@
 
 </head>
 <body>
+<!--Add nav as Vue-->
+<header v-bind:class="{'nav'}">
+    <nav>
+       <ul class="navigation"></ul>
+       <li><router-link class="link" :to="{name: 'Home'}">Home</router-link></li>
+       <li><router-link class="link" :to="{name: ''}">Recipes</router-link></li>
+       <li><router-link class="link" :to="{name: ''}">Lifestyle</router-link></li>
+       <li><router-link class="link" :to="{name: ''}">Videos</router-link></li>
+       <li><router-link class="link" :to="{name: ''}">About</router-link></li>
+       
+    </nav>
+    <!--Home Recipes Lifestyles Videos About-->
+</header>
     <aside id="leftside"></aside>
     <aside id="rightside"></aside>
     <div id="container">
