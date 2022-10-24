@@ -29,7 +29,7 @@ var container = new Vue({
 
     //convert image to vue
 
-    mainimage: '<img src = " images/chili.jpg" width= "180" >',
+    mainimage: "images/chili.jpg",
   },
   components: {
     foodblog: {
