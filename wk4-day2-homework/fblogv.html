@@ -87,16 +87,36 @@
 </head>
 <body>
 <!--Add nav as Vue-->
-<header v-bind:class="{'nav'}">
-    <nav>
-       <ul class="navigation"></ul>
-       <li><router-link class="link" :to="{name: 'Home'}">Home</router-link></li>
-       <li><router-link class="link" :to="{name: ''}">Recipes</router-link></li>
-       <li><router-link class="link" :to="{name: ''}">Lifestyle</router-link></li>
-       <li><router-link class="link" :to="{name: ''}">Videos</router-link></li>
-       <li><router-link class="link" :to="{name: ''}">About</router-link></li>
-       
-    </nav>
+<div id="container" class="container">
+        <div class="navigationBar sticky-top">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Recipes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lifestyles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+<header>
+    
     <!--Home Recipes Lifestyles Videos About-->
 </header>
     <aside id="leftside"></aside>
